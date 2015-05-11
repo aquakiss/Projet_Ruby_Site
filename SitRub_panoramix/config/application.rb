@@ -31,7 +31,8 @@ module SitRubPanoramix
   config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
   # Minimum Sass number precision required by bootstrap-sass
   ::Sass::Script::Value::Number.precision = [8, ::Sass::Script::Value::Number.precision].max
-    
+  # Autoload lib/ folder including all subdirectories
+  config.autoload_paths += Dir["#{config.root}/lib/**/"]
     config.active_record.raise_in_transactional_callbacks = true
   end
 end

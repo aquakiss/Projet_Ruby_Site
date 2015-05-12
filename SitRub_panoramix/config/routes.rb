@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :maps
+  resources :points
+  
   devise_for :users
   get 'main/index'
 

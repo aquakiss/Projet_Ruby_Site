@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511145356) do
+ActiveRecord::Schema.define(version: 20150512094342) do
+
+  create_table "maps", force: :cascade do |t|
+    t.integer  "map_id"
+    t.string   "map_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "points", force: :cascade do |t|
+    t.integer  "x"
+    t.integer  "y"
+    t.integer  "map_id"
+    t.string   "photo_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

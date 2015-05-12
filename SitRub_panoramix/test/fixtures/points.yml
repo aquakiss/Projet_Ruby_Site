@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  x: 
+  'y': 
+  map_id: 
+  photo_url: MyString
+
+two:
+  x: 
+  'y': 
+  map_id: 
+  photo_url: MyString

@@ -1,5 +1,15 @@
+<% if current_user.admin? %>
 <div>
   <h1>Bonjour <%= current_user.email %> </h1>
   <div class="col-xs-12 col-sm-6 col-md-8">Photos panoramique ici..</div>
   <div class="col-xs-6 col-md-4">Carte là..</div>
 </div>
+
+<% else %>
+<div> VOUS N'ETES PAS PRETS!!!!!!!!</div>
+<div>
+  <h1>Bonjour <%= current_user.email %> </h1>
+  <div class="col-xs-12 col-sm-6 col-md-8">Photos panoramique ici..</div>
+  <div class="col-xs-6 col-md-4">Carte là..</div>
+</div>
+<% end %>

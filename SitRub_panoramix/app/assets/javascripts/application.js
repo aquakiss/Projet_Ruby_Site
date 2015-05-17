@@ -15,3 +15,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function setup(){
+        /*document.getElementById("ping").onclick = function(){
+          sphere = new Photosphere(this.getAttribute("href"));
+          sphere.loadPhotosphere(document.getElementById("sphere"));
+          return false;
+        };*/
+        sphere = new Photosphere("/home/alex/Projet_Ruby_Site/SitRub_Panoramix/app/assets/stest.jpg"); 
+        sphere.loadPhotosphere(document.getElementById("sphere"));
+      }
+      setup();

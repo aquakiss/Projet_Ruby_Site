@@ -1,6 +1,7 @@
 class PointsController < ApplicationController
   before_action :set_point, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /points
   # GET /points.json
   def index

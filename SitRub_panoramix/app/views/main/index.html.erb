@@ -16,6 +16,10 @@
 </div>
 
 <!-- include de la bonne page -->
-  <div class="col-xs-12 col-sm-6 col-md-8">Photos panoramique ici..</div>
-  <div class="col-xs-6 col-md-4">Carte là..</div>
+<div class="col-xs-12 col-sm-6 col-md-8">
+  <% if user_signed_in? %>
+    <div id="sphere" style="width: 70%; height: 600px;"></div>
+  <% end %>
+</div>
+<div class="col-xs-6 col-md-4">Carte là..</div>
 

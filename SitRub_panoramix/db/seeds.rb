@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+puts ("creatingUsers")
 users = User.create([
 	{
 		email: 'iAmaError@default.com', 
@@ -18,4 +18,5 @@ users = User.create([
 		admin: 'true'
 	}
 ])
+puts ("Users created")
 

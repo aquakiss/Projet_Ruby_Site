@@ -1,14 +1,19 @@
+<%= javascript_include_tag 'sphere', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <% if current_user.admin? %>
-<div>
+<div style="height: 550px;">
   <h1>Bonjour <%= current_user.email %> </h1>
-  <div class="col-xs-12 col-sm-6 col-md-8">Photos panoramique ici..</div>
-  <div class="col-xs-6 col-md-4">Carte là..</div>
+  <div class="col-xs-7 col-sm-7 col-md-7" id="sphere" style="height: 100%">Photos panoramique ici..</div>
+  <div class="col-xs-5 col-md-5">Carte là..</div>
+  <script type="text/javascript">setup("assets/stest.jpg");</script>
 </div>
 <% else %>
 <div> VOUS N'ETES PAS PRETS!!!!!!!!</div>
 <div>
   <h1>Bonjour <%= current_user.email %> </h1>
-  <div class="col-xs-12 col-sm-6 col-md-8">Photos panoramique ici..</div>
-  <div class="col-xs-6 col-md-4">Carte là..</div>
+  <div class="col-xs-7 col-sm-7 col-md-7" id="sphere" style="height: 600px;">Photos panoramique ici..</div>
+  <div class="col-xs-5 col-md-5">Carte là..</div>
+  <script type="text/javascript">setup("assets/stest.jpg");</script>
 </div>
 <% end %>
+

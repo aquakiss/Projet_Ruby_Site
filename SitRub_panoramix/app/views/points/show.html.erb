@@ -12,12 +12,13 @@
 
 <p>
   <strong>Map:</strong>
-  <%= @point.map_id %>
+  <%= @point.map.inspect %>
 </p>
 
 <p>
   <strong>Photo url:</strong>
   <%= @point.photo_url %>
+  <%= cl_image_tag @point.photo_url %>
 </p>
 
 <%= link_to 'Edit', edit_point_path(@point) %> |

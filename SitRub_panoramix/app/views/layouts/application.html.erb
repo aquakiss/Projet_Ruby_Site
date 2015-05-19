@@ -26,20 +26,19 @@
           <li class="col-md-2"><p><%= link_to('Edit registration', edit_user_registration_path) %></p></li>
       
         <% else %>
-          <li class="col-md-1"><p><%= link_to('Register', new_user_registration_path)  %></p></li>
+          <li class="col-md-2"><p><%= link_to('Register', new_user_registration_path)  %></p></li>
         <% end %>
         
         <% if user_signed_in? %>
-          <li class="col-md-1"><p><%=link_to("Accueil",root_url)%></p></li>
+          <li class="col-md-2"><p><%=link_to("Accueil",root_url)%></p></li>
           
-          <li class="col-md-1"><p><%=link_to("Voir les points",points_path)%></p></li>
-          <li class="col-md-1"><p><%=link_to("Voir les cartes",maps_path)%></p></li>
-          <li class="col-md-1"><p><%=link_to("Upload une carte",new_map_path)%></p></li>
-          <li class="col-md-1"><p><%=link_to("Upload une photo",new_point_path)%></p></li>
+          <li class="col-md-2"><p><%=link_to("Voir les points",points_path)%></p></li>
+          <li class="col-md-2"><p><%=link_to("Voir les cartes",maps_path)%></p></li>
+          <li class="col-md-2"><p><%=link_to("Upload une carte",new_map_path)%></p></li>
         <% end %>
 
         <% if user_signed_in? && current_user.admin? %>
-          <li class="col-md-1"><p><%=link_to("Gestion des utilisateurs",points_path)%></p></li>
+          <li class="col-md-2"><p><%=link_to("Gestion des utilisateurs",points_path)%></p></li>
         <% end %>
 
       </ul>

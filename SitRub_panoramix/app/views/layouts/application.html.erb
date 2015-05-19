@@ -10,8 +10,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default">         
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -33,17 +32,20 @@
         <% if user_signed_in? %>
           <li class="col-md-1"><p><%=link_to("Accueil",root_url)%></p></li>
           
-          <li class="col-md-2"><p><%=link_to("Voir les points",points_path)%></p></li>
-          <li class="col-md-2"><p><%=link_to("Voir les cartes",maps_path)%></p></li>
-          <li class="col-md-2"><p><%=link_to("Upload une carte",new_map_path)%></p></li>
-          <li class="col-md-2"><p><%=link_to("Upload une photo",new_point_path)%></p></li>
+          <li class="col-md-1"><p><%=link_to("Voir les points",points_path)%></p></li>
+          <li class="col-md-1"><p><%=link_to("Voir les cartes",maps_path)%></p></li>
+          <li class="col-md-1"><p><%=link_to("Upload une carte",new_map_path)%></p></li>
+          <li class="col-md-1"><p><%=link_to("Upload une photo",new_point_path)%></p></li>
         <% end %>
+
+        <% if user_signed_in? && current_user.admin? %>
+          <li class="col-md-1"><p><%=link_to("Gestion des utilisateurs",points_path)%></p></li>
+        <% end %>
+
       </ul>
     </div>
   </div>
 </nav>
-
-
   <%= yield %>
 
 </body>

@@ -3,15 +3,13 @@
 
   <div class="form-inputs">
     <%= f.input :map_id %>
-    <%= f.input :map_url %>
   </div>
+
+  <%= f.hidden_field(:map_url_cache) %>
+  <%= f.file_field(:map_url) %>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 
-	<div class="form-group">
-	    <label for="exampleInputFile">Map input</label>
-	    <input type="file" id="exampleInputFile">
-	</div>
 <% end %>

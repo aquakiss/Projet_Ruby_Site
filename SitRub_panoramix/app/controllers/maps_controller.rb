@@ -11,6 +11,7 @@ class MapsController < ApplicationController
   # GET /maps/1
   # GET /maps/1.json
   def show
+    @point = Point.new
   end
 
   # GET /maps/new
@@ -20,6 +21,7 @@ class MapsController < ApplicationController
 
   # GET /maps/1/edit
   def edit
+
   end
 
   # POST /maps
@@ -36,6 +38,12 @@ class MapsController < ApplicationController
         format.json { render json: @map.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  #nested point
+  private
+  def map_params
+    params.require(:map).permit(:name, points_attributes: [:id, :x, :y, :photo_url])
   end
 
   # PATCH/PUT /maps/1

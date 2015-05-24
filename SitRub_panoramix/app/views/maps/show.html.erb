@@ -10,16 +10,35 @@
   <%= @map.map_url %>
 </p>
 
-<ul>
-	<% @map.points.each do |point| %>
-	<li>
-		<%= point.inspect %>
-		<%= link_to "Point ##{point.id}", point_path(point) %>
-	</li>
-	<% end %>
-	<li><%= cl_image_tag(@map.map_url, :alt => map.short_name) %></li>
-</ul>
+<p>
+	<%= cl_image_tag(@map.map_url) %>
+</p>
 
-<%= link_to 'Add a photo',new_point_path(@map) %> |
+
+
+  <ul>
+  <%= simple_form_for :points do |points_form| %>
+  <li>
+        <%= points_form.label :map_id %>
+        <%= points_form.label "#{@map.map_id}" %>
+
+        <%= points_form.label :x %>
+        <%= points_form.text_field :x %>
+ 
+        <%= points_form.label :y %>
+        <%= points_form.text_field :y %>
+
+        <%= points_form.hidden_field(:photo_url_cache) %>
+        <%= points_form.file_field(:photo_url) %>
+    </li>
+
+    <div class="form-actions">
+      <%= points_form.button :submit %>
+    </div>
+
+  <% end %>
+  </ul>
+
+
 <%= link_to 'Edit', edit_map_path(@map) %> |
 <%= link_to 'Back', maps_path %>

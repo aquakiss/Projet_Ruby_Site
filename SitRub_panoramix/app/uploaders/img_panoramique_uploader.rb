@@ -17,10 +17,6 @@ class ImgPanoramiqueUploader < CarrierWave::Uploader::Base
     resize_to_fit(100, 100)
   end
 
-  def public_id
-    return model.short_name
-  end 
-
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog

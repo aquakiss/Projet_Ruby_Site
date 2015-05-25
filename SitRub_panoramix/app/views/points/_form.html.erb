@@ -4,17 +4,13 @@
   <div class="form-inputs">
     <div class="position-x"><%= f.input :x %></div>
     <div class="position-y"><%= f.input :y %></div>
-    <%= f.input :map_id, :readonly => true, :default => @map.map_id %>
+    <%= f.input :map_id %>
   </div>
 
   <%= f.hidden_field(:photo_url_cache) %>
   <%= f.file_field(:photo_url) %>
   <div class="form-actions">
     <%= f.button :submit %>
-  </div>
-  <div class="map">
-    <img src="<%= @map.map_url %>">
-    <div class="point" data-x="<%= @point.x %>" data-y="<%= @point.y %>"></div>
   </div>
   
 <% end %>

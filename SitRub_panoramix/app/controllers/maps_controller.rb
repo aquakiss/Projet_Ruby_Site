@@ -12,6 +12,7 @@ class MapsController < ApplicationController
   # GET /maps/1.json
   def show
     @point = Point.new
+    @all_points = Point.where("map_id = #{@map.map_id}")
   end
 
   # GET /maps/new
@@ -59,7 +60,6 @@ class MapsController < ApplicationController
       end
     end
   end
-
   # DELETE /maps/1
   # DELETE /maps/1.json
   def destroy

@@ -20,8 +20,8 @@
         <td><%= point.y %></td>
         <td><%= point.map_id %></td>
         <td><%= point.photo_url %></td>
-        <td><%= link_to 'Show', point %></td>
-        <td><%= link_to 'Edit', edit_point_path(point) %></td>
+        <td><%= link_to 'Show', point %> | </td>
+        <td><%= link_to 'Edit', edit_point_path(point) %> | </td>
         <td><%= link_to 'Destroy', point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

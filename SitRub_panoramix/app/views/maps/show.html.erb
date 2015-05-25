@@ -14,8 +14,9 @@
   <%= @map.map_url %>
 </p>
 
-<p>
+<p class="map">
 	<%= cl_image_tag(@map.map_url) %>
+  <a href=<%= @all_points[0].photo_url %> class="point" style="top: <%= @all_points[0].x %>%; left:<%= @all_points[0].y %>%"></a>
 </p>
 
   <ul>

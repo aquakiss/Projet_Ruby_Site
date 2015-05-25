@@ -11,7 +11,24 @@ class MapsController < ApplicationController
   # GET /maps/1
   # GET /maps/1.json
   def show
-    @point = Point.new
+  end
+
+  def createPoint
+    @point = Point.new(point_params)
+    respond_to do |format|
+      if @point.save
+        format.html { redirect_to @point, notice: 'Point was successfully created.' }
+        format.json { render :show, status: :created, location: @point }
+      else
+        format.html { render :new }
+        format.json { render json: @point.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def allpoint map_di
+    @nb_map = Point.where("map_id = #{map_di}").count
+    return @nb_map
   end
 
   # GET /maps/new
@@ -40,16 +57,11 @@ class MapsController < ApplicationController
     end
   end
 
-  #nested point
-  private
-  def map_params
-    params.require(:map).permit(:name, points_attributes: [:id, :x, :y, :photo_url])
-  end
-
   # PATCH/PUT /maps/1
   # PATCH/PUT /maps/1.json
   def update
     respond_to do |format|
+      @map = Map.find(params[:id])
       if @map.update(map_params)
         format.html { redirect_to @map, notice: 'Map was successfully updated.' }
         format.json { render :show, status: :ok, location: @map }

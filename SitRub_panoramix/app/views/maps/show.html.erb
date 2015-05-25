@@ -18,20 +18,16 @@
   <strong>Map url:</strong>
   <%= @map.map_url %>
 </p>
-<p>
-  <strong>Nombre de points:</strong>
-  <%= allpoint(@map.map_id) %>
-</p>
 <p class="map">
 	<%= cl_image_tag(@map.map_url) %>
   <a href=<%= @all_points[0].photo_url %> class="point" style="top: <%= @all_points[0].x %>%; left:<%= @all_points[0].y %>%"></a>
 </p>
 
 <ul>
-<%= simple_form_for :points do |points_form| %>
+<%= simple_form_for @point do |points_form| %>
 <li>
       <%= points_form.label :map_id %>
-      <%= points_form.label "#{@map.map_id}" %>
+      <%= points_form.text_field :map_id, :readonly => true , :value => "#{@map.map_id}" %>
 
       <%= points_form.label :x %>
       <%= points_form.text_field :x %>

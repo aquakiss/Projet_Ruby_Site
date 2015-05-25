@@ -10,16 +10,6 @@
   <%= @point.y %>
 </p>
 
-<p>
-  <strong>Map:</strong>
-  <%= @point.map.inspect %>
-</p>
-
-<p>
-  <strong>Photo url:</strong>
-  <%= @point.photo_url %>
-</p>
-
 <p><%= cl_image_tag (@point.photo_url) %></p>
 
 <%= link_to 'Edit', edit_point_path(@point) %> |

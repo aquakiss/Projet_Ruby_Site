@@ -8,6 +8,7 @@ $ ->
   y = $('.point').attr('data-y')
   $('.point').css('left', y + '%')
   $('.point').eq(1).css('visibility', 'hidden')
+  $('.map .point').css('visibility', 'visible')
   # on change
   $('.position-x input').change (e) ->
     $('.point').css('top', $('.position-x input').val() + '%')

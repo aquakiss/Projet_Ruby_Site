@@ -3,6 +3,7 @@ class CreatePoints < ActiveRecord::Migration
     create_table :points do |t|
       t.integer :x
       t.integer :y
+      t.integer :id
       t.integer :map_id
       t.string :photo_url
 

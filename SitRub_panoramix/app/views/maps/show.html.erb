@@ -15,8 +15,7 @@
 <p class="map">
 	<%= cl_image_tag(@map.map_url) %>
   <% @all_points.each do |un_point| %>
-    <a href="http://localhost:3000/points/4" class="point" style="top: <%= un_point.x %>%; left:<%= un_point.y %>%">
-      <%= link_to '', points_path %>
+    <a href="http://localhost:3000/points/<%= un_point.id %>" class="point" style="top: <%= un_point.x %>%; left:<%= un_point.y %>%">
     </a>
   <% end %>
 </p>

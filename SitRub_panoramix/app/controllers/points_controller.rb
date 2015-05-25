@@ -11,6 +11,7 @@ class PointsController < ApplicationController
   # GET /points/1
   # GET /points/1.json
   def show
+    @map = Map.where("map_id = #{@point.map_id}")[0]
   end
 
   # GET /points/new
@@ -20,6 +21,7 @@ class PointsController < ApplicationController
 
   # GET /points/1/edit
   def edit
+    @map = Map.where("map_id = #{@point.map_id}")[0]
   end
 
   # POST /points

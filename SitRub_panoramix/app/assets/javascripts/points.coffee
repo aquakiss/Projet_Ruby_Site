@@ -7,6 +7,7 @@ $ ->
   $('.point').css('top', x + '%')
   y = $('.point').attr('data-y')
   $('.point').css('left', y + '%')
+  $('.point').eq(1).css('visibility', 'hidden')
   # on change
   $('.position-x input').change (e) ->
     $('.point').css('top', $('.position-x input').val() + '%')

@@ -7,6 +7,7 @@
     <tr>
       <th>X</th>
       <th>Y</th>
+      <th>Id</th>
       <th>Map</th>
       <th>Photo url</th>
       <th colspan="3"></th>
@@ -18,6 +19,7 @@
       <tr>
         <td><%= point.x %></td>
         <td><%= point.y %></td>
+        <td><%= point.id %></td>
         <td><%= point.map_id %></td>
         <td><%= point.photo_url %></td>
         <td><%= link_to 'Show', point %> | </td>
@@ -29,5 +31,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Point', new_point_path %>

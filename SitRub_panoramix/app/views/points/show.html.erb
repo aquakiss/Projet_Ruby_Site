@@ -12,7 +12,7 @@
   <%= @point.y %>
 </p>
 
-<img src="<%= @point.photo_url %>"></img>
+<p><%= cl_image_tag (@point.photo_url) %></p>
 <div id="sphere" style="width: 100%; height: 600px"></div>
 
 <%= link_to 'Edit', edit_point_path(@point) %> |

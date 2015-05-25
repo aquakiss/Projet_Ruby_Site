@@ -15,21 +15,3 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-.map {
-  position: relative;
-  max-width: 100%;
-}
-
-$point-size: 20px;
-
-.point {
-  position: absolute;
-  width: $point-size;
-  height: $point-size;
-  margin-top: -($point-size/2);
-  margin-left: -($point-size/2);
-  background: red;
-  border-radius: $point-size;
-  border: 3px solid white;
-  box-shadow: 0 0 5px black;
-}

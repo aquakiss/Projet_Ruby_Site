@@ -8,19 +8,17 @@
   <strong>Nombre de points associés:</strong>
   <%= @nb_map %>
 </p>
-<div>
-  <%= @all_points[0].x %>
-  <%= @all_points[0].y %>
-  <%= @all_points[0].photo_url %>
-</div>
-<br>
 <p>
   <strong>Map url:</strong>
   <%= @map.map_url %>
 </p>
 <p class="map">
 	<%= cl_image_tag(@map.map_url) %>
-  <a href=<%= @all_points[0].photo_url %> class="point" style="top: <%= @all_points[0].x %>%; left:<%= @all_points[0].y %>%"></a>
+  <% @all_points.each do |un_point| %>
+    <a href="http://localhost:3000/points/4" class="point" style="top: <%= un_point.x %>%; left:<%= un_point.y %>%">
+      <%= link_to '', points_path %>
+    </a>
+  <% end %>
 </p>
 
 <ul>

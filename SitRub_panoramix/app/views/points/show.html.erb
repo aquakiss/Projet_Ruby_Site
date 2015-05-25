@@ -12,6 +12,12 @@
   <%= @point.y %>
 </p>
 
+<p>
+  <strong>Map:</strong>
+  <%= @point.map_id %>
+  <%= link_to 'Show', @map %>
+</p>
+
 <p><%= cl_image_tag (@point.photo_url) %></p>
 <div id="sphere" style="width: 100%; height: 600px"></div>
 

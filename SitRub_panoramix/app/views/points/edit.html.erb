@@ -1,6 +1,10 @@
 <h1>Editing Point</h1>
-
-<%= render 'form' %>
-
+<div>
+	<%= render 'form' %>
+</div>
+<div class="map">
+	<%= cl_image_tag(@map.map_url) %>
+	<a class="point" style="top: <%= @point.x %>%; left:<%= @point.y %>%"/>
+</div>
 <%= link_to 'Show', @point %> |
 <%= link_to 'Back', points_path %>

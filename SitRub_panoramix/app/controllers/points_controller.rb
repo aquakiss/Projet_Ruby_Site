@@ -20,6 +20,7 @@ class PointsController < ApplicationController
 
   # GET /points/1/edit
   def edit
+    @map = Map.where("map_id = #{@point.map_id}")[0]
   end
 
   # POST /points

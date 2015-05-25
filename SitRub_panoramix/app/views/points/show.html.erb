@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'sphere', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -10,17 +12,11 @@
   <%= @point.y %>
 </p>
 
-<p>
-  <strong>Map:</strong>
-  <%= @point.map.inspect %>
-</p>
-
-<p>
-  <strong>Photo url:</strong>
-  <%= @point.photo_url %>
-</p>
-
-<p><%= cl_image_tag (@point.photo_url) %></p>
+<img src="<%= @point.photo_url %>"></img>
+<div id="sphere" style="width: 100%; height: 600px"></div>
 
 <%= link_to 'Edit', edit_point_path(@point) %> |
 <%= link_to 'Back', points_path %>
+<script type="text/javascript">
+	setup("<%= @point.photo_url %>");
+</script>

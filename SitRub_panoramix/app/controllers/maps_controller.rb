@@ -11,6 +11,9 @@ class MapsController < ApplicationController
   # GET /maps/1
   # GET /maps/1.json
   def show
+    @point = Point.new
+    @all_points = Point.where("map_id = #{@map.map_id}")
+    @nb_map = Point.where("map_id = #{@map.map_id}").count
   end
 
   def createPoint
@@ -24,11 +27,6 @@ class MapsController < ApplicationController
         format.json { render json: @point.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  def allpoint map_di
-    @nb_map = Point.where("map_id = #{map_di}").count
-    return @nb_map
   end
 
   # GET /maps/new
@@ -71,7 +69,6 @@ class MapsController < ApplicationController
       end
     end
   end
-
   # DELETE /maps/1
   # DELETE /maps/1.json
   def destroy

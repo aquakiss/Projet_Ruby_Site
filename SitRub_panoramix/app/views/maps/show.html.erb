@@ -4,7 +4,11 @@
   <strong>Map:</strong>
   <%= @map.map_id %>
 </p>
-
+<div>
+  <%= @all_points[0].x %>
+  <%= @all_points[0].y %>
+  <%= @all_points[0].photo_url %>
+</div>
 <p>
   <strong>Map url:</strong>
   <%= @map.map_url %>
@@ -40,6 +44,6 @@
 <% end %>
 </ul>
 
-<% link_to 'Ajouter un point', new_point_path(@map) %> 
+<% link_to 'Ajouter un point', new_point_path(@map) %> |
 <%= link_to 'Edit', edit_map_path(@map) %> |
 <%= link_to 'Back', maps_path %>

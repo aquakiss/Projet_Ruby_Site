@@ -13,35 +13,38 @@
   <strong>Map url:</strong>
   <%= @map.map_url %>
 </p>
-
+<p>
+  <strong>Nombre de points:</strong>
+  <%= allpoint(@map.map_id) %>
+</p>
 <p class="map">
 	<%= cl_image_tag(@map.map_url) %>
   <a href=<%= @all_points[0].photo_url %> class="point" style="top: <%= @all_points[0].x %>%; left:<%= @all_points[0].y %>%"></a>
 </p>
 
-  <ul>
-  <%= simple_form_for :points do |points_form| %>
-  <li>
-        <%= points_form.label :map_id %>
-        <%= points_form.label "#{@map.map_id}" %>
+<ul>
+<%= simple_form_for :points do |points_form| %>
+<li>
+      <%= points_form.label :map_id %>
+      <%= points_form.label "#{@map.map_id}" %>
 
-        <%= points_form.label :x %>
-        <%= points_form.text_field :x %>
- 
-        <%= points_form.label :y %>
-        <%= points_form.text_field :y %>
+      <%= points_form.label :x %>
+      <%= points_form.text_field :x %>
 
-        <%= points_form.hidden_field(:photo_url_cache) %>
-        <%= points_form.file_field(:photo_url) %>
-    </li>
+      <%= points_form.label :y %>
+      <%= points_form.text_field :y %>
 
-    <div class="form-actions">
-      <%= points_form.button :submit %>
-    </div>
+      <%= points_form.hidden_field(:photo_url_cache) %>
+      <%= points_form.file_field(:photo_url) %>
+  </li>
 
-  <% end %>
-  </ul>
+  <div class="form-actions">
+    <%= points_form.button :submit %>
+  </div>
 
-<%= link_to 'Ajouter un point', new_point_path(@map) %> | 
+<% end %>
+</ul>
+
+<% link_to 'Ajouter un point', new_point_path(@map) %> |
 <%= link_to 'Edit', edit_map_path(@map) %> |
 <%= link_to 'Back', maps_path %>

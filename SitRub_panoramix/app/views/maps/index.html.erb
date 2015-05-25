@@ -15,7 +15,7 @@
     <% @maps.each do |map| %>
       <tr>
         <td><%= map.map_id %> |</td> 
-        <td><%= map.map_url %> |</td>
+        <td><%= cl_image_tag(map.map_url) %> |</td>
         <td><%= link_to 'Show', map %> |</td> 
         <td><%= link_to 'Edit', edit_map_path(map) %> |</td>
         <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
